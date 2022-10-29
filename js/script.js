@@ -47,15 +47,18 @@ const app = createApp({
                 this.newTaskText = '';
 
                 this.error = false;
-                // console.log(this.tasks);
+                console.log(this.tasks);
             }
             else{
                 this.error = true;
             }
         },
-        isDone(index) {
+        isDone(i) {
             this.tasks[index].done = true;
-            console.log(this.tasks[index].done)
+            console.log(this.tasks[i].done)
+        },
+        deleteTask(i){
+            this.tasks.splice(i,1);
         }
 
     },
