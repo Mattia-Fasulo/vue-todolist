@@ -52,6 +52,10 @@ const app = createApp({
             else{
                 this.error = true;
             }
+        },
+        isDone(index) {
+            this.tasks[index].done = true;
+            console.log(this.tasks[index].done)
         }
 
     },

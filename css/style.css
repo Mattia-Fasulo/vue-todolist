@@ -92,16 +92,27 @@ input, button {
 }
 
 .task-text {
+    width: 100%;
     color: white;
+    font-size: 1rem;
+    line-height: 2rem;
 }
 
 #task-remove-btn {
-    color: red;
+    color: rgb(106, 64, 64);
     font-weight: 600;
+}
+
+#task-done-btn {
+    color: rgb(67, 133, 79);
+    font-weight: 600;
+    margin-right: 1rem;
+    
 }
 
 .task-done {
     text-decoration: line-through;
+    color:rgb(137, 137, 137)
 }
 
 /* -----------no task---------- */

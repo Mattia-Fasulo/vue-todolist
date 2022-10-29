@@ -32,7 +32,7 @@
       <h1>Task List 2022</h1>
       <div class="new-task-form">
         <input id="new-task-input" type="text"
-        v-model="newTaskText" placeholder="Add here your task">
+        v-model="newTaskText" placeholder="Add here your task" @keyup.enter="addNewTask">
         <button @click="addNewTask" id="new-task-btn" type="button">Add</button>
       </div>
       <div class="error-container" v-if="error">
@@ -50,6 +50,7 @@
               <input  class="task-text" :class="{'task-done':item.done}" type="text" :placeholder="item.text" readonly>
             </div>
             <div class="task-option">
+              <button id="task-done-btn" type="button" @click="isDone(index)">Done</button>
               <button id="task-remove-btn" type="button">Delete</button>
             </div>
           </div>
