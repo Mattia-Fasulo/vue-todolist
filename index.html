@@ -25,9 +25,42 @@
 
 </head>
 
-<body>
+<body >
 
-  
+  <div id="app" class="wrapper">
+    <header>
+      <h1>Task List 2022</h1>
+      <div class="new-task-form">
+        <input id="new-task-input" type="text"
+        v-model="newTaskText" placeholder="Add here your task">
+        <button @click="addNewTask" id="new-task-btn" type="button">Add</button>
+      </div>
+      <div class="error-container" v-if="error">
+        <span>The task must be at least 4 characters long</span>
+      </div>
+    </header>
+    
+    
+    <main>
+      <section class="task-list">
+        <h2>Tasks</h2>
+        <div v-if="this.tasks.length > 0" class="tasks" >
+          <div v-for="(item, index) in tasks" class="task">
+            <div class="task-content">
+              <input  class="task-text" :class="{'task-done':item.done}" type="text" :placeholder="item.text" readonly>
+            </div>
+            <div class="task-option">
+              <button id="task-remove-btn" type="button">Delete</button>
+            </div>
+          </div>
+        </div>
+        <div class="no-task" v-else>
+          <h1>There are no new tasks</h1>
+        </div>
+      </section>
+    
+    </main>
+  </div>
   
 
  

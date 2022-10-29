@@ -4,7 +4,116 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* general */
 body {
-    font-family: 'Source Code Pro', monospace;;
+    font-family: 'Source Code Pro', monospace;
+    
 }
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header{
+    padding: 2rem 1.5rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+main {
+    flex: 1 1 0%;
+    padding: 2rem 1.5rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/* --------new task------- */
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.new-task-form {
+    display: flex;
+
+}
+
+input, button {
+    color: white;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.new-task-form input {
+    flex: 1 1 0%;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: rgb(62, 62, 62);
+    margin-right: 2rem;
+    border-radius: 1rem;
+}
+
+#new-task-btn {
+    color: rgb(45, 45, 45);
+    font-weight: 600;
+}
+
+.error-container span {
+   color: red;
+   margin-left: 1rem;
+
+}
+
+
+/* ------------tasks---------- */
+.tasks {
+    display: flex;
+    flex-flow: column;
+}
+
+.task {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    background-color: black;
+    border-radius: 1rem;
+}
+
+.task-content {
+    flex: 1 1 0%;
+}
+
+.task-text {
+    color: white;
+}
+
+#task-remove-btn {
+    color: red;
+    font-weight: 600;
+}
+
+.task-done {
+    text-decoration: line-through;
+}
+
+/* -----------no task---------- */
+
+.no-task {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* --------------color placeholder------------- */
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(118, 118, 118);
+    opacity: 1; /* Firefox */
+  }
