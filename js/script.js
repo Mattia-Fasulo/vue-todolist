@@ -28,11 +28,13 @@ const { createApp } = Vue;
 const app = createApp({
     data() {
         return {
+            readOnly: true,
             error: false,
             newTaskText: '',
             newTask: {
-                text: ' ',
-                done: false
+                text: '',
+                done: false,
+                readOnly: true,
             },
             tasks: [],
         }
@@ -54,11 +56,14 @@ const app = createApp({
             }
         },
         isDone(i) {
-            this.tasks[index].done = true;
+            this.tasks[i].done = true;
             console.log(this.tasks[i].done)
         },
         deleteTask(i){
             this.tasks.splice(i,1);
+        },
+        modifyTask(i) {
+            this.tasks[i].readOnly = false;
         }
 
     },

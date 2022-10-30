@@ -47,11 +47,12 @@
         <div v-if="this.tasks.length > 0" class="tasks" >
           <div v-for="(item, index) in tasks" class="task">
             <div class="task-content">
-              <input  class="task-text" :class="{'task-done':item.done}" type="text" :placeholder="item.text" readonly>
+              <input  class="task-text" :class="{'task-done':item.done}" type="text" :placeholder="item.text" :readonly="item.readOnly">
             </div>
             <div class="task-option">
-              <button id="task-done-btn" type="button" @click="isDone(index)">Done</button>
-              <button id="task-remove-btn" type="button" @click="deleteTask(index)">Delete</button>
+              <button id="task-modify-btn" type="button"><i class="fa-solid fa-pen" @click="modifyTask(index)"></i></button>
+              <button id="task-done-btn" type="button" @click="isDone(index)"><i class="fa-solid fa-check"></i></button>
+              <button id="task-remove-btn" type="button" @click="deleteTask(index)"><i class="fa-solid fa-trash"></i></button>
             </div>
           </div>
         </div>
