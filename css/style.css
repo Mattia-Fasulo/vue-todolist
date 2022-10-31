@@ -1,134 +1,172 @@
 /* reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 /* general */
+:root {
+  --white: #fff;
+  --my-pink: #bb5c61;
+  --my-dark-green: #00363b;
+}
+
 body {
-    font-family: 'Source Code Pro', monospace;
-    
+  font-family: "Source Code Pro", monospace;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(42, 81, 188, 1) 0%,
+    rgba(187, 92, 97, 1) 0%,
+    rgba(106, 75, 80, 1) 100%,
+    rgba(0, 54, 59, 1) 100%
+  );
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-header{
-    padding: 2rem 1.5rem;
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
+header {
+  padding: 2rem 1.5rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 main {
-    flex: 1 1 0%;
-    padding: 2rem 1.5rem;
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
+  flex: 1 1 0%;
+  padding: 2rem 1.5rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 }
-
 
 /* --------new task------- */
 header h1 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  color: var(--my-pink);
+  text-shadow: 1px 1px 2px rgb(0, 0, 0);
 }
 
 .new-task-form {
-    display: flex;
-
+  display: flex;
 }
 
-input, button {
-    color: white;
-    appearance: none;
-    border: none;
-    outline: none;
-    background: none;
+input,
+button {
+  color: white;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
 }
 
 .new-task-form input {
-    flex: 1 1 0%;
-    padding: 1rem;
-    font-size: 1rem;
-    background-color: rgb(62, 62, 62);
-    margin-right: 2rem;
-    border-radius: 1rem;
+  flex: 1 1 0%;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: var(--my-dark-green);
+  margin-right: 2rem;
+  border-radius: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 #new-task-btn {
-    color: rgb(45, 45, 45);
-    font-weight: 600;
+  color: var(--my-pink);
+  text-shadow: 1px 1px 2px rgb(0, 0, 0);
+  font-weight: 900;
+  font-size: 1.5rem;
+  text-transform: uppercase;
 }
 
 .error-container span {
-   color: red;
-   margin-left: 1rem;
-
+  color: red;
+  margin-left: 1rem;
 }
 
-
 /* ------------tasks---------- */
+.task-list h2 {
+  font-weight: 600;
+  color: var(--my-pink);
+  text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+
 .tasks {
-    display: flex;
-    flex-flow: column;
+  display: flex;
+  flex-flow: column;
 }
 
 .task {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    display: flex;
-    background-color: black;
-    border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  background-color: var(--my-dark-green);
+  border-radius: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .task-content {
-    flex: 1 1 0%;
+  flex: 1 1 0%;
 }
 
 .task-text {
-    width: 100%;
-    color: white;
-    font-size: 1rem;
-    
+  width: 100%;
+  color: white;
+  font-size: 1rem;
+}
+
+.task-text::placeholder {
+  color: white;
+}
+
+#task-prefer-btn {
+  margin-right: 1rem;
 }
 
 #task-remove-btn {
-    color: rgb(228, 25, 25);
-    font-weight: 600;
+  color: rgb(228, 25, 25);
 }
 
 #task-done-btn {
-    color: rgb(67, 133, 79);
-    font-weight: 600;
-    margin-right: 1rem;
-    
+  color: rgb(67, 133, 79);
+  margin-right: 1rem;
 }
 
 #task-modify-btn {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .task-done {
-    text-decoration: line-through;
-    color:rgb(137, 137, 137)
+  text-decoration: line-through;
+  color: rgb(137, 137, 137);
 }
 
 /* -----------no task---------- */
 
 .no-task {
-    margin-top: 2rem;
-    text-align: center;
+  margin-top: 2rem;
+  text-align: center;
 }
 
 /* --------------color placeholder------------- */
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgb(118, 118, 118);
-    opacity: 1; /* Firefox */
-  }
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(118, 118, 118);
+  opacity: 1; /* Firefox */
+}
+
+i {
+  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+
+#new-task-btn:hover,
+i:hover {
+  scale: 1.1;
+}

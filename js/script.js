@@ -35,6 +35,7 @@ const app = createApp({
                 text: '',
                 done: false,
                 readOnly: true,
+                prefer: false,
             },
             tasks: [],
         }
@@ -44,7 +45,7 @@ const app = createApp({
             if (this.newTaskText.length >= 4) {
                 this.newTask.text = this.newTaskText;
                 //  console.log(this.newTask)
-                let newTaskCopy = { ...this.newTask }
+                let newTaskCopy = { ...this.newTask };
                 this.tasks.unshift(newTaskCopy);
                 this.newTaskText = '';
 
@@ -64,6 +65,19 @@ const app = createApp({
         },
         modifyTask(i) {
             this.tasks[i].readOnly = false;
+            this.tasks[i].done = false;
+            this.tasks[i].text = '';
+        },
+        enterModify(i) {
+            // this.tasks[i].text = this.newTextMod;
+            this.tasks[i].readOnly = true;
+            // this.newTextMod = '';
+        },
+        addPrefer(i) {
+            let newCopy = { ...this.tasks[i] };
+            this.tasks.splice(this.tasks.indexOf(this.tasks[i]),1);
+            newCopy.prefer = true;
+            this.tasks.unshift(newCopy);
         }
 
     },

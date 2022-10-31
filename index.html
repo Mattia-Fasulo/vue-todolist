@@ -47,17 +47,18 @@
         <div v-if="this.tasks.length > 0" class="tasks" >
           <div v-for="(item, index) in tasks" class="task">
             <div class="task-content">
-              <input  class="task-text" :class="{'task-done':item.done}" type="text" :placeholder="item.text" :readonly="item.readOnly">
+              <input class="task-text" :class="{'task-done':item.done}" type="text" :placeholder="item.text" :readonly="item.readOnly" @keyup.enter="enterModify(index)">
             </div>
             <div class="task-option">
-              <button id="task-modify-btn" type="button"><i class="fa-solid fa-pen" @click="modifyTask(index)"></i></button>
+              <button id="task-prefer-btn" type="button" @click="addPrefer(index)"><i class="fa-solid fa-star grey" ></i></button>
+              <button id="task-modify-btn" type="button" @click="modifyTask(index)"><i class="fa-solid fa-pen" ></i></button>
               <button id="task-done-btn" type="button" @click="isDone(index)"><i class="fa-solid fa-check"></i></button>
               <button id="task-remove-btn" type="button" @click="deleteTask(index)"><i class="fa-solid fa-trash"></i></button>
             </div>
           </div>
         </div>
         <div class="no-task" v-else>
-          <h1>There are no new tasks</h1>
+          <h2>There are no new tasks</h1>
         </div>
       </section>
     
@@ -65,7 +66,7 @@
   </div>
   
 
- 
+  
 
   <!-- mio js -->
   <script src="js/script.js"></script>
