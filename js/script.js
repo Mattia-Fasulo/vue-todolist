@@ -48,7 +48,7 @@ const app = createApp({
                 let newTaskCopy = { ...this.newTask };
                 this.tasks.unshift(newTaskCopy);
                 this.newTaskText = '';
-
+                
                 this.error = false;
                 console.log(this.tasks);
             }
@@ -66,12 +66,11 @@ const app = createApp({
         modifyTask(i) {
             this.tasks[i].readOnly = false;
             this.tasks[i].done = false;
-            this.tasks[i].text = '';
+            // this.tasks[i].text = '';
         },
         enterModify(i) {
-            // this.tasks[i].text = this.newTextMod;
             this.tasks[i].readOnly = true;
-            // this.newTextMod = '';
+            
         },
         addPrefer(i) {
             let newCopy = { ...this.tasks[i] };
