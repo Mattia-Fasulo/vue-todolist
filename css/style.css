@@ -6,9 +6,14 @@
 }
 /* general */
 :root {
-  --white: #fff;
+  --white: rgb(204, 200, 200);
   --my-pink: #bb5c61;
   --my-dark-green: #00363b;
+  --my-violet: #8c801b;
+  --my-orange: #732012;
+  --my-green: #5e8645;
+  --my-water-green: #347065;
+
 }
 
 body {
@@ -60,7 +65,7 @@ header h1 {
 
 input,
 button {
-  color: white;
+  color: var(--white);
   appearance: none;
   border: none;
   outline: none;
@@ -74,7 +79,11 @@ button {
   background-color: var(--my-dark-green);
   margin-right: 2rem;
   border-radius: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 #new-task-btn {
@@ -86,7 +95,7 @@ button {
 }
 
 .error-container span {
-  color: red;
+  color: black;
   margin-left: 1rem;
 }
 
@@ -108,7 +117,11 @@ button {
   display: flex;
   background-color: var(--my-dark-green);
   border-radius: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 .task-content {
@@ -117,28 +130,30 @@ button {
 
 .task-text {
   width: 100%;
-  color: white;
+  color: var(--white);
   font-size: 1rem;
 }
 
 .task-text::placeholder {
-  color: white;
+  color: var(--white);
 }
 
 .task-prefer-btn {
+  color: var(--my-violet);
   margin-right: 1rem;
 }
 
 .task-remove-btn {
-  color: rgb(228, 25, 25);
+  color: var(--my-orange);
 }
 
 .task-done-btn {
-  color: rgb(67, 133, 79);
+  color: var(--my-green);
   margin-right: 1rem;
 }
 
 .task-modify-btn {
+  color: var(--my-water-green);
   margin-right: 1rem;
 }
 

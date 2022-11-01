@@ -31,7 +31,6 @@ const app = createApp({
             readOnly: true,
             error: false,
             newTaskText: '',
-            textMod: '',
             newTask: {
                 text: '',
                 done: false,
@@ -69,9 +68,11 @@ const app = createApp({
             this.tasks[i].text = '';
         },
         enterModify(i) {
-            this.tasks[i].text = this.textMod        
-            this.textMod = '';
+            let myInputs = Array.from(document.querySelectorAll('.task-text'));
+            console.log(myInputs[i].value)
+            this.tasks[i].text = myInputs[i].value;
             this.tasks[i].readOnly = true;
+            myInputs[i].value = '';
         },
         addPrefer(i) {
             let newCopy = { ...this.tasks[i] };
