@@ -47,7 +47,7 @@
         <div v-if="this.tasks.length > 0" class="tasks" >
           <div v-for="(item, index) in tasks" class="task">
             <div class="task-content">
-              <input class="task-text" :class="{'task-done':item.done}" type="text" :placeholder="item.text" :readonly="item.readOnly" @keyup.enter="enterModify(index)">
+              <input v-model="textMod" class="task-text" :class="{'task-done':item.done}" type="text" :placeholder="item.text" :readonly="item.readOnly" @keyup.enter="enterModify(index)">
             </div>
             <div class="task-option">
               <button class="task-prefer-btn" type="button" @click="addPrefer(index)"><i class="fa-solid fa-star grey" ></i></button>
