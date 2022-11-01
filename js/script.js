@@ -66,6 +66,8 @@ const app = createApp({
             this.tasks[i].readOnly = false;
             this.tasks[i].done = false;
             this.tasks[i].text = '';
+            let myInputs = Array.from(document.querySelectorAll('.task-text'));
+            myInputs[i].focus();
         },
         enterModify(i) {
             let myInputs = Array.from(document.querySelectorAll('.task-text'));
